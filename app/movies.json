@@ -1,0 +1,35 @@
+[
+    {
+      "model": "movies.movie",
+      "pk": 1,
+      "fields": {
+        "title": "mil",
+        "genre": "comedy",
+        "year": "1993",
+        "created_date": "2021-01-07T14:07:13.540Z",
+        "updated_date": "2021-01-07T14:07:13.540Z"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 2,
+      "fields": {
+        "title": "IT",
+        "genre": "thriller",
+        "year": "2000",
+        "created_date": "2021-01-07T14:06:59.408Z",
+        "updated_date": "2021-01-07T14:06:59.408Z"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 3,
+      "fields": {
+        "title": "Barbie",
+        "genre": "comedy",
+        "year": "2009",
+        "created_date": "2021-01-07T14:06:51.542Z",
+        "updated_date": "2021-01-07T14:06:51.542Z"
+      }
+    }
+  ]

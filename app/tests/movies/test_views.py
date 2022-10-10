@@ -75,7 +75,28 @@ def test_get_single_movie_incorrect_id(client):
 def test_get_all_movies(client, add_movie):
     movie_one = add_movie(title="Big foot", genre="comedy", year="1998")
     movie_two = add_movie("No", "thriller", "2007")
-    resp = client.get(f"/api/movies/")
+    resp = client.get("/api/movies/")
     assert resp.status_code == 200
     assert resp.data[0]["title"] == movie_one.title
     assert resp.data[1]["title"] == movie_two.title
+
+@pytest.mark.django_db
+def test_remove_movie(client, add_movie):
+    movie = add_movie(title="Happi", genre="comedy", year="2021")
+
+    resp = client.get(f"/api/movies/{movie.id}/")
+    assert resp.status_code == 200
+    assert resp.data["title"] == "Happi"
+
+    resp_two = client.delete(f"/api/movies/{movie.id}/")
+    assert resp_two.status_code == 204
+
+    resp_three = client.get("/api/movies/")
+    assert resp_three.status_code == 200
+    assert len(resp_three.data) == 0
+
+
+@pytest.mark.django_db
+def test_remove_movie_incorrect_id(client):
+    resp = client.delete(f"/api/movies/32/")
+    assert resp.status_code == 404
