@@ -13,14 +13,14 @@ def test_add_movie(client):
     resp = client.post(
         "/api/movies/",
         {
-            "title": "Happy feet!!",
+            "title": "Happy Feet!!",
             "genre": "comedy",
-            "year": "2000",
+            "year": "2001",
         },
         content_type="application/json"
     )
     assert resp.status_code == 201
-    assert resp.data["title"] == "Happy feet!!"
+    assert resp.data["title"] == "Happy Feet!!"
 
     movies = Movie.objects.all()
     assert len(movies) == 1
