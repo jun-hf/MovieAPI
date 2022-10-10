@@ -1,5 +1,7 @@
 # Movie API 
 
+![movies_api](images/movies_api.jpg)
+
 
 Movie API is a project that has different API endpoints that allows users to store there favourite movies.
 
@@ -16,7 +18,7 @@ pip install -r requirements.txt
 
 3. Start the server
 ```bash
-python maange.py runserver
+python manage.py runserver
 ```
 
 ## Built With
