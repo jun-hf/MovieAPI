@@ -1,7 +1,7 @@
 from django.http import Http404
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from .models import Movie
 from .serializers import MovieSerializer
@@ -32,3 +32,8 @@ class MovieDetail(APIView):
         movie = self.get_object(pk)
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
+
+    def delete(self, request, pk, format=None):
+        movie = self.get_object(pk)
+        movie.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
