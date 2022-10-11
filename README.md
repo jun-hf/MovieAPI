@@ -3,7 +3,30 @@
 ![movies_api](images/movies_api.jpg)
 
 
-Movie API is a project that has different API endpoints that allows users to store there favourite movies.
+Movie API is a project that has different API endpoints that allows users to store their favourite movies.
+
+### Create 
+![Post](images/post.jpg)
+
+### Read
+
+Getting a movie using the relevant id.
+![get](images/Get.jpg)
+
+Getting a list of movies.
+![get_movie](images/GetList.jpg)
+
+### Update
+![put](images/Put.jpg)
+
+### Delete
+![Delete](images/Delete.jpg)
+
+## Testing 
+Using Pytest as a way for Test Driven Development. 
+
+Managed to reach 100% on code coverage.
+![cov](images/coverage.jpg)
 
 ## Installation & Run the program
 
@@ -39,6 +62,3 @@ python manage.py runserver
 
 - Swagger
 - Core API
-
-
-
